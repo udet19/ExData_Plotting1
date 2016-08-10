@@ -20,17 +20,25 @@ data <- cbind(data, datetime=as.POSIXct(paste(data$Date, data$Time), format="%Y-
 
 #-------------------------Plot histogram-START--------------------------------
 
+par(mfcol=c(2,2), mar = c(4,4,1,2))
+
+with(data, plot(datetime, Global_active_power, type = "l", ylab = "Global Active Power", xlab = ""))
+
 with(data, plot(datetime, Sub_metering_1, type = "n", ylab = "Energy sub metering", xlab=""))
 with(data, lines(datetime, Sub_metering_1))
 with(data, lines(datetime, Sub_metering_2, col="red"))
 with(data, lines(datetime, Sub_metering_3, col="blue"))
-legend("topright", col = c("black", "red", "blue"), lty = 1, legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), text.width = 45000, y.intersp = 1.3)
+legend("topright", col = c("black", "red", "blue"), lty = 1, legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), bty="n", text.width = 80000, y.intersp = 1.3)
 
+with(data, plot(datetime, Voltage, type = "l"))
+
+with(data, plot(datetime, Global_reactive_power, type = "l"))
 #-------------------------Plot histogram-FINISH-------------------------------
+
 
 #-------------------------Save histogram to PNG-START-------------------------
 
-dev.copy(png, "./plot3.png", width=480, height=480)
+dev.copy(png, "./plot4.png", width=480, height=480)
 dev.off()
 
 #-------------------------Save histogram to PNG-START-------------------------
