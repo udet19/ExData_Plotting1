@@ -27,7 +27,7 @@ hist(data$Global_active_power, col = "red", xlab = "Global Active Power (kilowat
 
 #-------------------------Save histogram to PNG-START-------------------------
 
-dev.copy(png, "./plot1.png")
+dev.copy(png, "./plot1.png", width=480, height=480)
 dev.off()
 
 #-------------------------Save histogram to PNG-START-------------------------

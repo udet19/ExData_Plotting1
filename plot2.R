@@ -28,7 +28,7 @@ plot(data$datetime, data$Global_active_power, type = "l", ylab = "Global Active 
 
 #-------------------------Save histogram to PNG-START-------------------------
 
-dev.copy(png, "./plot2.png")
+dev.copy(png, "./plot2.png", width=480, height=480)
 dev.off()
 
 #-------------------------Save histogram to PNG-START-------------------------
